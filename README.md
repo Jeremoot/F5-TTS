@@ -20,6 +20,9 @@ Place them into the F5-TTS Folder
 - Git
 - ffmpeg
 - Nvidia GPU with more than 8GB of VRAM
+- **CUDA 11.8 or compatible installed (required for GPU acceleration)**
+
+> 💡 If using a different CUDA version, adjust installation commands accordingly.
 
 ---
 
@@ -27,7 +30,7 @@ Place them into the F5-TTS Folder
 
 ```bash
 # Create a virtual environment (Python 3.10 or 3.11)
-python -m venv venv
+py -3.11 -m venv venv
 
 # Activate the virtual environment
 # (Windows)
@@ -41,6 +44,14 @@ pip install --upgrade pip
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+👉 By default, `requirements.txt` assumes CUDA 11.8. If your system uses another CUDA version, you may need to reinstall PyTorch manually:
+
+```bash
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+```
+
+Replace `cu118` with `cu117` / `cu121` if needed.
 
 ---
 
