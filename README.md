@@ -42,80 +42,59 @@ pip install -r requirements.txt
 
 ---
 
-## Inference
+## User Manual: Using the Gradio Interface
 
-### 1. Gradio App
+This project uses the **Gradio interface** for training a text-to-speech model.
 
-Supported features:
+### 1️⃣ **Transcribe Data Tab**
+Upload or place your `wavs` folder and `metadata.csv` inside the `{project_name}` directory.
+Select **Audio from Path** and click **Transcribe** to prepare the transcriptions.
 
-- Basic TTS with Chunk Inference
-- Multi-Style / Multi-Speaker Generation
-- Voice Chat
+### 2️⃣ **Vocab Check Tab**
+Click **Check Vocab** to validate if the dataset uses any unknown tokens.
 
-Run:
+### 3️⃣ **Prepare Data Tab**
+Click **Prepare** to process your dataset. This step filters out clips shorter than 1 second or longer than 25 seconds.
 
-```bash
-f5-tts_infer-gradio
-```
+### 4️⃣ **Train Data Tab**
+Fill in the training parameters and click **Start Training**.
 
-Optional flags:
-
-```bash
-f5-tts_infer-gradio --port 7860 --host 0.0.0.0
-f5-tts_infer-gradio --share
-```
+### 5️⃣ **Test Model Tab**
+After training, you can load a checkpoint, upload a reference audio, input text, and generate synthesized audio.
+**Note:** You may need to adjust the **Speed** slider based on the length of the generated text. Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.g. 10s) use lower speed.
 
 ---
 
-### 2. CLI Inference
+## ✅ **Training Parameters Used**
 
-```bash
-f5-tts_infer-cli --model "F5-TTS" --ref_audio "ref_audio.wav" --ref_text "The content, subtitle or transcription of reference audio." --gen_text "Some text you want the TTS model to generate."
+The following parameters were used in training:
+
+```json
+{
+    "exp_name": "F5TTS_Base",
+    "learning_rate": 1e-05,
+    "batch_size_per_gpu": 3200,
+    "batch_size_type": "frame",
+    "max_samples": 64,
+    "grad_accumulation_steps": 1,
+    "max_grad_norm": 1,
+    "epochs": 300,
+    "num_warmup_updates": 1184,
+    "save_per_updates": 200000,
+    "last_per_steps": 50000,
+    "finetune": false,
+    "file_checkpoint_train": "C:\\Users\\zacht\\OneDrive\\Documents\\FYP\\F5-TTS\\ckpts\\fyp_en_tts\\model_800000_reduced.pt",
+    "tokenizer_type": "pinyin",
+    "tokenizer_file": "",
+    "mixed_precision": "bf16",
+    "logger": "tensorboard"
+}
 ```
 
-Run with default settings:
-
-```bash
-f5-tts_infer-cli
-```
-
-Run with a custom configuration:
-
-```bash
-f5-tts_infer-cli -c custom.toml
-```
-
----
-
-## Training
-
-Start training via Gradio interface:
-
-```bash
-f5-tts_finetune-gradio
-```
-
-## Acknowledgements
-
-This project builds on contributions and resources from:
-
-- E2-TTS
-- Emilia
-- WenetSpeech4TTS
-- lucidrains
-- bfs18
-- SD3
-- Hugging Face diffusers
-- torchdiffeq
-- Vocos
-- FunASR
-- faster-whisper
-- UniSpeech
-- ctc-forced-aligner
-- mrfakename
-- f5-tts-mlx
-- F5-TTS-ONNX
-- JarodMica
+Notes:
+- Trained from checkpoint `model_800000_reduced.pt`
+- Used **bf16 mixed precision** and **TensorBoard** for logging
+- Trained for **300 epochs**; checkpoint saved every 200,000 updates
 
 ---
 
