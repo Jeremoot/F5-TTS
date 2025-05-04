@@ -35,7 +35,7 @@ Extract the ckpts and data folders then place them into the extracted F5-TTS pro
 
 ---
 
-## Installation (using venv)
+## Installation (using venv, Follow in order)
 
 ```bash
 git clone https://github.com/Jeremoot/F5-TTS.git
