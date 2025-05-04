@@ -50,7 +50,7 @@ This project uses the **Gradio interface** for training a text-to-speech model.
 Upload or place your `wavs` folder and `metadata.csv` inside the `{project_name}` directory.  
 Select **Audio from Path** and click **Transcribe** to prepare the transcriptions.
 
-![Transcribe Data Tab]([https://i.imgur.com/c84On7S.png](https://imgur.com/a/QTP27BW))
+![Transcribe Data Tab]([https://i.imgur.com/c84On7S.png])
 
 ### 2️⃣ **Vocab Check Tab**
 Click **Check Vocab** to validate if the dataset uses any unknown tokens.
