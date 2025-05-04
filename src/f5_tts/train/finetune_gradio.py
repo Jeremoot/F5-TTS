@@ -1778,7 +1778,9 @@ SOS: Check the use_ema setting (True or False) for your model to see what works 
             ref_audio = gr.Audio(label="Audio Ref", type="filepath")
             gen_text = gr.Textbox(label="Gen Text")
 
-            dropdown_ref_sample.change(fn=load_ref_sample, inputs=[dropdown_ref_sample], outputs=[ref_text, ref_audio, gen_text])
+            dropdown_ref_sample.change(
+                fn=load_ref_sample, inputs=[dropdown_ref_sample], outputs=[ref_text, ref_audio, gen_text]
+            )
 
             random_sample_infer.click(
                 fn=get_random_sample_infer, inputs=[cm_project], outputs=[ref_text, gen_text, ref_audio]
