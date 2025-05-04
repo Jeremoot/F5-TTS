@@ -95,8 +95,12 @@ def load_vocoder(vocoder_name="vocos", is_local=False, local_path="", device=dev
             print(f"Load vocos from local path {local_path}")
             repo_id = "charactr/vocos-mel-24khz"
             revision = None
-            config_path = hf_hub_download(repo_id=repo_id, cache_dir=local_path, filename="config.yaml", revision=revision)
-            model_path = hf_hub_download(repo_id=repo_id, cache_dir=local_path, filename="pytorch_model.bin", revision=revision)
+            config_path = hf_hub_download(
+                repo_id=repo_id, cache_dir=local_path, filename="config.yaml", revision=revision
+            )
+            model_path = hf_hub_download(
+                repo_id=repo_id, cache_dir=local_path, filename="pytorch_model.bin", revision=revision
+            )
             vocoder = Vocos.from_hparams(config_path=config_path)
             state_dict = torch.load(model_path, map_location="cpu")
             vocoder.load_state_dict(state_dict)
@@ -223,11 +227,7 @@ def load_model(
 
 def fetch_from_hub(hf_repo: str, cache_dir: None | str) -> Path:
     model_path = Path(
-        snapshot_download(
-            repo_id=hf_repo,
-            allow_patterns=["*.safetensors", "*.txt"],
-            cache_dir=cache_dir
-        )
+        snapshot_download(repo_id=hf_repo, allow_patterns=["*.safetensors", "*.txt"], cache_dir=cache_dir)
     )
     return model_path
 
@@ -499,7 +499,7 @@ def infer_batch_process(
         final_text_list = convert_char_to_pinyin(text_list)
 
         ref_audio_len = audio.shape[-1] // hop_length
-        duration=None
+        duration = None
         if fix_duration is not None:
             duration = int(fix_duration * target_sample_rate / hop_length)
         elif prediction_model:

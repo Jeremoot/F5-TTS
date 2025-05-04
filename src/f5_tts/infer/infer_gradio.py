@@ -9,8 +9,6 @@ import gradio as gr
 import numpy as np
 import soundfile as sf
 import torchaudio
-import os
-from datetime import datetime
 from cached_path import cached_path
 from transformers import AutoModelForCausalLM, AutoTokenizer
 

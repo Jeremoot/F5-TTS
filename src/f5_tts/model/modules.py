@@ -890,7 +890,6 @@ class DurationPredictor(nn.Module):
         lens: torch.Tensor | None = None,
         return_loss: bool = False,
     ):
-
         # handle raw wave
         if inp.ndim == 2:
             inp = self._mel_spec(inp)

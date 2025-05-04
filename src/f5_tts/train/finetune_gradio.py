@@ -1238,7 +1238,14 @@ def infer(project, file_checkpoint, exp_name, ref_text, ref_audio, gen_text, nfe
         print("update >> ", device_test, file_checkpoint, use_ema)
 
     with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
-        tts_api.infer(gen_text=gen_text, ref_text=ref_text, ref_file=ref_audio, nfe_step=nfe_step, file_wave=f.name, speed=speed_slider)
+        tts_api.infer(
+            gen_text=gen_text,
+            ref_text=ref_text,
+            ref_file=ref_audio,
+            nfe_step=nfe_step,
+            file_wave=f.name,
+            speed=speed_slider,
+        )
         return f.name, tts_api.device
 
 
@@ -1763,23 +1770,16 @@ SOS: Check the use_ema setting (True or False) for your model to see what works 
                 ref_audio_path = os.path.join("data", "fyp_en_tts_pinyin", "test_wavs", selected_sample)
                 return ref_text_val, ref_audio_path
 
-            dropdown_ref_sample = gr.Dropdown(
-                choices=list(reference_map.keys()),
-                label="Select Reference Sample"
-            )
+            dropdown_ref_sample = gr.Dropdown(choices=list(reference_map.keys()), label="Select Reference Sample")
 
             random_sample_infer = gr.Button("Random Sample")
 
             ref_text = gr.Textbox(label="Ref Text")
             ref_audio = gr.Audio(label="Audio Ref", type="filepath")
             gen_text = gr.Textbox(label="Gen Text")
-            
-            dropdown_ref_sample.change(
-                fn=load_ref_sample,
-                inputs=[dropdown_ref_sample],
-                outputs=[ref_text, ref_audio]
-            )
-            
+
+            dropdown_ref_sample.change(fn=load_ref_sample, inputs=[dropdown_ref_sample], outputs=[ref_text, ref_audio])
+
             random_sample_infer.click(
                 fn=get_random_sample_infer, inputs=[cm_project], outputs=[ref_text, gen_text, ref_audio]
             )
@@ -1792,7 +1792,17 @@ SOS: Check the use_ema setting (True or False) for your model to see what works 
 
             check_button_infer.click(
                 fn=infer,
-                inputs=[cm_project, cm_checkpoint, exp_name, ref_text, ref_audio, gen_text, nfe_step, ch_use_ema, speed_slider],
+                inputs=[
+                    cm_project,
+                    cm_checkpoint,
+                    exp_name,
+                    ref_text,
+                    ref_audio,
+                    gen_text,
+                    nfe_step,
+                    ch_use_ema,
+                    speed_slider,
+                ],
                 outputs=[gen_audio, txt_info_gpu],
             )
 
