@@ -27,7 +27,7 @@ Place them into the F5-TTS Folder
 
 ```bash
 # Create a virtual environment (Python 3.10 or 3.11)
-python -m venv venv
+py -3.11 -m venv venv
 
 # Activate the virtual environment
 # (Windows)
