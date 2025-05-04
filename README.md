@@ -9,6 +9,7 @@
 
 👉 Download model checkpoints and dataset here:  
 https://drive.google.com/drive/folders/1ZT0oLTuWPCjDKslDX7_tg-E0izpnKZV4?usp=drive_link
+Place them into the F5-TTS Folder
 
 ---
 
