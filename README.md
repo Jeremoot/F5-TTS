@@ -38,6 +38,8 @@ Extract the ckpts and data folders then place them into the extracted F5-TTS pro
 ## Installation (using venv)
 
 ```bash
+git clone https://github.com/Jeremoot/F5-TTS.git
+cd F5-TTS
 # Create a virtual environment (Python 3.10 or 3.11)
 py -3.11 -m venv venv
 
