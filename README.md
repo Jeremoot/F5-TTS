@@ -60,7 +60,7 @@ Click **Check Vocab** to validate if the dataset uses any unknown tokens.
 ### 3️⃣ **Prepare Data Tab**
 Click **Prepare** to process your dataset. This step filters out clips shorter than 1 second or longer than 25 seconds.
 
-![Prepare Data Tab]([https://i.imgur.com/3DPLn5o.png](https://imgur.com/a/crxroy7))
+![Prepare Data Tab]([[https://i.imgur.com/3DPLn5o.png](https://imgur.com/a/crxroy7)](https://i.imgur.com/1nuL40Rl.png))
 
 ### 4️⃣ **Train Data Tab**
 Fill in the training parameters and click **Start Training**.
