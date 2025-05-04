@@ -98,7 +98,7 @@ Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.
 
 ---
 
-## ✅ **Training Parameters Used**
+## ✅ **Training Parameters Used with the LJSpeech Dataset**
 
 The following parameters were used to start **training from scratch**:
 
