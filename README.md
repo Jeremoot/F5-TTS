@@ -55,7 +55,7 @@ Select **Audio from Path** and click **Transcribe** to prepare the transcription
 ### 2️⃣ **Vocab Check Tab**
 Click **Check Vocab** to validate if the dataset uses any unknown tokens.
 
-![Vocab Check Tab](https://imgur.com/a/vocab-szC5B25)
+![Vocab Check Tab](https://i.imgur.com/d1aXlHu.png)
 
 ### 3️⃣ **Prepare Data Tab**
 Click **Prepare** to process your dataset. This step filters out clips shorter than 1 second or longer than 25 seconds.
