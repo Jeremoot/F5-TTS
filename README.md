@@ -69,7 +69,7 @@ Fill in the training parameters and click **Start Training**.
 ![Train Data Tab](https://i.imgur.com/1CNl7QM.png)
 
 ### 5️⃣ **Test Model Tab**
-After training, you can load a checkpoint, upload a reference audio, input text, and generate synthesized audio.  
+After training, you can load a checkpoint model, select one of the Test References or use a random sample, and generate synthesized audio.  
 **Note:** You may need to adjust the **Speed** slider based on the length of the generated text.  
 Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.g. 10s) use lower speed.
 
