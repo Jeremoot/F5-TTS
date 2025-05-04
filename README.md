@@ -75,7 +75,7 @@ f5-tts_finetune-gradio
 This project uses the **Gradio interface** for training a text-to-speech model.
 
 ### 1️⃣ **Transcribe Data Tab**
-Upload or place your `wavs` folder and `metadata.csv` inside the F5-TTS project folder.  
+Upload or place your `wavs` folder and `metadata.csv` inside the {your_project_name} folder.  
 Select **Audio from Path** and click **Transcribe** to prepare the transcriptions.
 
 ![Transcribe Data Tab](https://i.imgur.com/wkR1Zzo.png)
