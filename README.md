@@ -19,7 +19,7 @@ Please refer to the **README on GitHub** for the most up-to-date user manual and
 👉 Download model checkpoints and dataset here:  
 https://drive.google.com/drive/folders/1ZT0oLTuWPCjDKslDX7_tg-E0izpnKZV4?usp=drive_link
 
-Place them into the F5-TTS folder.
+Place them into the F5-TTS project folder.
 
 ---
 
@@ -62,6 +62,12 @@ pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https
 
 Replace `cu118` with `cu117` / `cu121` if needed.
 
+✅ **Quick Start** after installation:
+
+```bash
+f5-tts_finetune-gradio
+```
+
 ---
 
 ## User Manual: Using the Gradio Interface
@@ -69,7 +75,7 @@ Replace `cu118` with `cu117` / `cu121` if needed.
 This project uses the **Gradio interface** for training a text-to-speech model.
 
 ### 1️⃣ **Transcribe Data Tab**
-Upload or place your `wavs` folder and `metadata.csv` inside the `{project_name}` directory.  
+Upload or place your `wavs` folder and `metadata.csv` inside the F5-TTS project folder.  
 Select **Audio from Path** and click **Transcribe** to prepare the transcriptions.
 
 ![Transcribe Data Tab](https://i.imgur.com/wkR1Zzo.png)

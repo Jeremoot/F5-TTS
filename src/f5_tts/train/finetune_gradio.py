@@ -1768,7 +1768,7 @@ SOS: Check the use_ema setting (True or False) for your model to see what works 
             def load_ref_sample(selected_sample):
                 ref_text_val = reference_map.get(selected_sample, "")
                 ref_audio_path = os.path.join("data", "fyp_en_tts_pinyin", "test_wavs", selected_sample)
-                return ref_text_val, ref_audio_path
+                return ref_text_val, ref_audio_path, ref_text_val
 
             dropdown_ref_sample = gr.Dropdown(choices=list(reference_map.keys()), label="Select Reference Sample")
 
@@ -1778,7 +1778,7 @@ SOS: Check the use_ema setting (True or False) for your model to see what works 
             ref_audio = gr.Audio(label="Audio Ref", type="filepath")
             gen_text = gr.Textbox(label="Gen Text")
 
-            dropdown_ref_sample.change(fn=load_ref_sample, inputs=[dropdown_ref_sample], outputs=[ref_text, ref_audio])
+            dropdown_ref_sample.change(fn=load_ref_sample, inputs=[dropdown_ref_sample], outputs=[ref_text, ref_audio, gen_text])
 
             random_sample_infer.click(
                 fn=get_random_sample_infer, inputs=[cm_project], outputs=[ref_text, gen_text, ref_audio]
