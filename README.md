@@ -19,7 +19,7 @@ Please refer to the **README on GitHub** for the most up-to-date user manual and
 👉 Download model checkpoints and dataset here:  
 https://drive.google.com/drive/folders/1ZT0oLTuWPCjDKslDX7_tg-E0izpnKZV4?usp=drive_link
 
-Place them into the F5-TTS project folder.
+Extract the ckpts and data folders then place them into the F5-TTS project folder.
 
 ---
 
