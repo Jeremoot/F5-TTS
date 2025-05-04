@@ -60,19 +60,19 @@ Click **Check Vocab** to validate if the dataset uses any unknown tokens.
 ### 3️⃣ **Prepare Data Tab**
 Click **Prepare** to process your dataset. This step filters out clips shorter than 1 second or longer than 25 seconds.
 
-![Prepare Data Tab](https://i.imgur.com/3DPLn5o.png)
+![Prepare Data Tab](https://i.imgur.com/1nuL40R.png)
 
 ### 4️⃣ **Train Data Tab**
 Fill in the training parameters and click **Start Training**.
 
-![Train Data Tab](https://i.imgur.com/XlFdDTN.png)
+![Train Data Tab](https://i.imgur.com/1CNl7QM.png)
 
 ### 5️⃣ **Test Model Tab**
 After training, you can load a checkpoint, upload a reference audio, input text, and generate synthesized audio.  
 **Note:** You may need to adjust the **Speed** slider based on the length of the generated text.  
 Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.g. 10s) use lower speed.
 
-![Test Model Tab](https://i.imgur.com/xfOF9qV.png)
+![Test Model Tab](https://i.imgur.com/iJaeS7F.png)
 
 ---
 
