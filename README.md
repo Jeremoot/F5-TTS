@@ -5,12 +5,21 @@
 
 ---
 
+## 📦 Repository and Manual
+
+This project is hosted at [GitHub Repository](https://github.com/Jeremoot/F5-TTS).  
+Please refer to the **README on GitHub** for the most up-to-date user manual and installation instructions.
+
+👉 If you downloaded this project directly as a ZIP or via Moodle, visit the repository page for updates and clarifications.
+
+---
+
 ## Download Checkpoints / Data
 
 👉 Download model checkpoints and dataset here:  
 https://drive.google.com/drive/folders/1ZT0oLTuWPCjDKslDX7_tg-E0izpnKZV4?usp=drive_link
 
-Place them into the F5-TTS Folder
+Place them into the F5-TTS folder.
 
 ---
 
@@ -22,7 +31,7 @@ Place them into the F5-TTS Folder
 - Nvidia GPU with more than 8GB of VRAM
 - **CUDA 11.8 or compatible installed (required for GPU acceleration)**
 
-> 💡 If using a different CUDA version, adjust installation commands accordingly.
+💡 If using a different CUDA version, adjust installation commands accordingly.
 
 ---
 
