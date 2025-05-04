@@ -95,33 +95,6 @@ Start training via Gradio interface:
 f5-tts_finetune-gradio
 ```
 
-See `src/f5_tts/train` for additional training instructions.
-
----
-
-## Evaluation
-
-See `src/f5_tts/eval` for evaluation instructions and tools.
-
----
-
-## Development
-
-Use `pre-commit` to ensure code quality:
-
-```bash
-pip install pre-commit
-pre-commit install
-```
-
-Before committing:
-
-```bash
-pre-commit run --all-files
-```
-
----
-
 ## Acknowledgements
 
 This project builds on contributions and resources from:
