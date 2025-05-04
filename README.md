@@ -47,7 +47,7 @@ pip install -r requirements.txt
 This project uses the **Gradio interface** for training a text-to-speech model.
 
 ### 1️⃣ **Transcribe Data Tab**
-Upload or place your `wavs` folder and `metadata.csv` inside the `{project_name}` directory.
+Upload or place your `wavs` folder and `metadata.csv` inside the `{project_name}` directory.  
 Select **Audio from Path** and click **Transcribe** to prepare the transcriptions.
 
 ### 2️⃣ **Vocab Check Tab**
@@ -60,14 +60,15 @@ Click **Prepare** to process your dataset. This step filters out clips shorter t
 Fill in the training parameters and click **Start Training**.
 
 ### 5️⃣ **Test Model Tab**
-After training, you can load a checkpoint, upload a reference audio, input text, and generate synthesized audio.
-**Note:** You may need to adjust the **Speed** slider based on the length of the generated text. Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.g. 10s) use lower speed.
+After training, you can load a checkpoint, upload a reference audio, input text, and generate synthesized audio.  
+**Note:** You may need to adjust the **Speed** slider based on the length of the generated text.  
+Shorter clips (e.g. 2–3s) perform better with a higher speed; longer clips (e.g. 10s) use lower speed.
 
 ---
 
 ## ✅ **Training Parameters Used**
 
-The following parameters were used in training:
+The following parameters were used to start **training from scratch**:
 
 ```json
 {
@@ -83,7 +84,7 @@ The following parameters were used in training:
     "save_per_updates": 200000,
     "last_per_steps": 50000,
     "finetune": false,
-    "file_checkpoint_train": "C:\\Users\\zacht\\OneDrive\\Documents\\FYP\\F5-TTS\\ckpts\\fyp_en_tts\\model_800000_reduced.pt",
+    "file_checkpoint_train": "",
     "tokenizer_type": "pinyin",
     "tokenizer_file": "",
     "mixed_precision": "bf16",
@@ -92,9 +93,9 @@ The following parameters were used in training:
 ```
 
 Notes:
-- Trained from checkpoint `model_800000_reduced.pt`
+- **Training started from scratch (no preloaded checkpoint)**
 - Used **bf16 mixed precision** and **TensorBoard** for logging
-- Trained for **300 epochs**; checkpoint saved every 200,000 updates
+- Planned training for **300 epochs**, saving checkpoint every 200,000 updates
 
 ---
 
